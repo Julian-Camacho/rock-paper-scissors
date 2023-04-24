@@ -7,7 +7,7 @@ Este es un proyecto de juego de Piedra, Papel o Tijera desarrollado como parte d
 - Interfaz de línea de comando fácil de usar.
 - El usuario puede elegir jugar piedra, papel o tijera en cada ronda.
 - La computadora selecciona aleatoriamente su elección en cada ronda.
-- El juego se juega al mejor de 5 rondas, con un empate que no cuenta como una ronda.
+- El juego se juega al mejor de 5 rondas.
 
 ## Tecnologías
 

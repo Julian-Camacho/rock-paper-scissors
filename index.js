@@ -1,4 +1,4 @@
-console.log("hello, world!")
+// console.log("hello, world!")
 
 const options = ["rock", "paper", "scissors"];
 
@@ -31,15 +31,43 @@ function playRound(playerSelection, computerSelection) {
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+// const playerSelection = "rock";
+// const computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+
+function getPlayerChoice(){
+    let validInput = false;
+    while(validInput == false){
+        const selection = prompt("Rock Paper Scissors");
+        if(selection == null){
+            continue;
+        }
+        const selectLower = selection.toLowerCase();
+        if(options.includes(selectLower)){
+            validInput = true;
+            return selectLower;
+        }
+    }
+}
 
 function game(){
+    let playerScore = 0;
+    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
-        const playerSelection = "rock";
+        const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+        if(checkWin(playerSelection, computerSelection) == "player"){
+            playerScore++;
+        } else if(checkWin(playerSelection, computerSelection) == "computer"){
+            computerScore++;
+        }
+    }
+    if(playerScore > computerScore){
+        console.log("You Won the Game!")
+    } else {
+        console.log("You Lose the Game!")
     }
 }
 
