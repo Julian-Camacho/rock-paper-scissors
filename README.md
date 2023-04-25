@@ -2,6 +2,8 @@
 
 Este es un proyecto de juego de Piedra, Papel o Tijera desarrollado como parte del plan de estudios de The Odin Project. Es un juego simple en el que el usuario juega contra la computadora, y gana el mejor de 5 rondas.
 
+[Link](https://julian-camacho.github.io/rock-paper-scissors/)
+
 ## Características
 
 - Interfaz de línea de comando fácil de usar.
