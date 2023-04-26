@@ -1,5 +1,9 @@
 // console.log("hello, world!")
 
+const text = document.querySelector("#info");
+
+console.log(text)
+
 const options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
@@ -37,18 +41,33 @@ function playRound(playerSelection, computerSelection) {
 // console.log(playRound(playerSelection, computerSelection));
 
 function getPlayerChoice(){
-    let validInput = false;
-    while(validInput == false){
-        const selection = prompt("Rock Paper Scissors");
-        if(selection == null){
-            continue;
-        }
-        const selectLower = selection.toLowerCase();
-        if(options.includes(selectLower)){
-            validInput = true;
-            return selectLower;
-        }
-    }
+    // let validInput = false;
+    // while(validInput == false){
+    //     const selection = prompt("Rock Paper Scissors");
+    //     if(selection == null){
+    //         continue;
+    //     }
+    //     const selectLower = selection.toLowerCase();
+    //     if(options.includes(selectLower)){
+    //         validInput = true;
+    //         return selectLower;
+    //     }
+    // }
+    const pRock = document.getElementById("rock");
+    const pPaper = document.getElementById("paper");
+    const pScissors = document.getElementById("scissors");
+
+    pRock.addEventListener("click", function(){
+        return "rock";
+    })
+
+    pPaper.addEventListener("click", function(){
+        return "paper";
+    })
+
+    pScissors.addEventListener("click", function(){
+        return "scissors";
+    })
 }
 
 function game(){
@@ -57,7 +76,7 @@ function game(){
     for (let i = 0; i < 5; i++) {
         const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+        console.log("playRound(playerSelection, computerSelection)");
         if(checkWin(playerSelection, computerSelection) == "player"){
             playerScore++;
         } else if(checkWin(playerSelection, computerSelection) == "computer"){
@@ -70,5 +89,3 @@ function game(){
         console.log("You Lose the Game!")
     }
 }
-
-game();
